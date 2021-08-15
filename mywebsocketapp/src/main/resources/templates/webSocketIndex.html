@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>webSocket</title>
+
+    <link rel="stylesheet" href="/css/mywebsocket.css" th:href="@{/css/mywebsocket.css}"></link>
+
+</head>
+
+<body>
+<div>
+    <h2>WebSocket 网络实时交互测试</h2>
+    <div>
+        <button id="connect" onclick="connectToWebSocketServer();">建立ws连接</button>
+        <button id="disconnect" disabled="disabled" onclick="disconnectWebSocketServer();">断开ws连接</button>
+    </div>
+    <div id="conversationDiv">
+        <label>What is your name?</label>
+        <input type="text" id="name"/>
+        <button id="sendName" onclick="csendToClient();">csendToClient</button>
+        <p id="response"></p>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript" src="/sockjs-client/1.1.1/sockjs.min.js" th:src="@{/sockjs-client/1.1.1/sockjs.min.js}"></script>
+<script type="text/javascript" src="/stomp/2.3.3/stomp.js" th:src="@{/stomp/2.3.3/stomp.js}"></script>
+<script type="text/javascript" src="/jquery/3.1.1/jquery.min.js" th:src="@{/jquery/3.1.1/jquery.min.js}"></script>
+<script type="text/javascript" src="/js/mywebsocket.js" th:src="@{/js/mywebsocket.js}"></script>
+
+
+</html>
